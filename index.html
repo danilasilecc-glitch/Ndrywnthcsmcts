@@ -2196,14 +2196,7 @@
       script.src = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2';
       script.onload = function() {
         initSupabase();
-        // Пытаемся загрузить прогресс с сервера при старте
-        setTimeout(async () => {
-          const loaded = await loadFromSupabase();
-          if (loaded) {
-            render();
-            showToast('Прогресс загружен с облака');
-          }
-        }, 1000);
+        
       };
       script.onerror = function() {
         console.error('Не удалось загрузить Supabase клиент');
